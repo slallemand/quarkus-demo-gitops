@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: quarkus-demo
+  annotations:
+    tektonci/build-namespace: quarkus-demo
+    backstage.io/kubernetes-id: quarkus-demo
+    backstage.io/techdocs-ref: url:https://github.com/slallemand/quarkus-demo
+    backstage.io/kubernetes-namespace: quarkus-demo
+    backstage.io/source-location: url:https://github.com/slallemand/quarkus-demo
+    github.com/project-slug: slallemand/quarkus-demo
+    janus-idp.io/tekton-enabled : 'true'    
+
+spec:
+  type: api
+  system: system
+  lifecycle: production
+  owner: quarkus
