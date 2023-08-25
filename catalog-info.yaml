@@ -1,18 +1,26 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: quarkus-demo
+  name: "quarkus-demo"
+  description: "A cool quarkus app"
   annotations:
-    tektonci/build-namespace: quarkus-demo
     backstage.io/kubernetes-id: quarkus-demo
-    backstage.io/techdocs-ref: url:https://github.com/slallemand/quarkus-demo
     backstage.io/kubernetes-namespace: quarkus-demo
+    janus-idp.io/tekton-enabled : 'true'
     backstage.io/source-location: url:https://github.com/slallemand/quarkus-demo
-    github.com/project-slug: slallemand/quarkus-demo
-    janus-idp.io/tekton-enabled : 'true'    
-
+    backstage.io/techdocs-ref: url:https://github.com/slallemand/quarkus-demo
+    gitlab.com/project-slug: slallemand/quarkus-demo
+  tags:
+    - java
+    - quarkus
+  links:
+    - url: https://devspaces.apps.cluster-jr597.sandbox426.opentlc.com/#https://github.com/slallemand/my-quarkus-app-4?che-editor=che-incubator/che-code/insiders&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+    - url: https://devspaces.apps.cluster-jr597.sandbox426.opentlc.com/#https://github.com/slallemand/my-quarkus-app-4?che-editor=che-incubator/che-idea/latest&devfilePath=.devfile-intellij.yaml
+      title: OpenShift Dev Spaces (JetBrains IntelliJ)
+      icon: web
 spec:
-  type: api
-  system: system
+  type: service
   lifecycle: production
-  owner: quarkus
+  owner: "dev-user"
